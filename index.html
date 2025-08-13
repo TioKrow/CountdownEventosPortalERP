@@ -5,28 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/img/">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <title>Eventos Grupo Portal ERP</title>
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary">
+        <div class="container-fluid justify-content-center">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img
+                        src="/src/img/ERP-Summit-Logo-Color 3.png" alt="Logo" width="90" height="60"
+                        class="d-inline-block align-text-top">
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#countdown">Chile</a></li>
+                    <li><a class="dropdown-item" href="#countdown2">Colombia</a></li>
+                    <li><a class="dropdown-item" href="#countdown3">Mexico</a></li>
+                </ul>
+            </li>
+        </div>
+    </nav>
+
     <div class="container">
-        <div id="countdown" style="border: 1px solid #ccc; padding: 20px; border-radius: 10px; margin: 30px;">
-            <h1 id="headline">ERP Summit Chile Comença em</h1>
+        <div id="countdown"
+            style="border: 1px solid #ccc; padding: 20px; border-radius: 10px; border-width: 10px; margin: 30px;">
+            <h1 id="headline">ERP Summit Chile Começa em</h1>
             <ul>
                 <li><span id="days"></span>Days</li>
                 <li><span id="hours"></span>Hours</li>
                 <li><span id="minutes"></span>Minutes</li>
                 <li><span id="seconds"></span>Seconds</li>
             </ul>
+            <a class="btn btn-primary" href="https://erpsummit.cl/" role="button">Site do Evento</a>
         </div>
         <div id="content" class="emoji">
             <span>🥳</span>
             <span>🎉</span>
-            <span>🎂</span>
+            <span>🎉</span>
         </div>
 
-        <div id="countdown2" style="border: 1px solid #ccc; padding: 20px; border-radius: 10px; margin: 30px;">
-            <h1 id="headline2">ERP Summit Colombia Comença em</h1>
+        <div id="countdown2"
+            style="border: 1px solid #ccc; padding: 20px; border-radius: 10px; border-width: 10px; margin: 30px;">
+            <h1 id="headline2">ERP Summit Colombia Começa em</h1>
 
             <ul>
                 <li><span id="days2"></span>Days</li>
@@ -34,32 +56,39 @@
                 <li><span id="minutes2"></span>Minutes</li>
                 <li><span id="seconds2"></span>Seconds</li>
             </ul>
+            <a class="btn btn-primary" href="https://erpsummit.com.co/" role="button">Site do Evento</a>
+
         </div>
         <div id="content2" class="emoji">
             <span>🥳</span>
             <span>🎉</span>
-            <span>🎂</span>
+            <span>🎉</span>
         </div>
-        <div id="countdown3" style="border: 1px solid #ccc; padding: 20px; border-radius: 10px; margin: 30px;">
-            <h1 id="headline3">ERP Summit Mexico Comença em</h1>
-
+        <div id="countdown3"
+            style="border: 1px solid #ccc; padding: 20px; border-radius: 10px; border-width: 10px; margin: 30px;">
+            <h1 id="headline3">ERP Summit Mexico Começa em</h1>
             <ul>
                 <li><span id="days3"></span>Days</li>
                 <li><span id="hours3"></span>Hours</li>
                 <li><span id="minutes3"></span>Minutes</li>
                 <li><span id="seconds3"></span>Seconds</li>
             </ul>
+            <a class="btn btn-primary" href="https://erpsummit.com.mx/" role="button">Site do Evento</a>
+
         </div>
         <div id="content3" class="emoji">
             <span>🥳</span>
             <span>🎉</span>
-            <span>🎂</span>
+            <span>🎉</span>
         </div>
     </div>
+    <footer class="conteiner-footer" style="background-color: grey; text-align: center; padding: 5px; ">
+        <p>© <i>Feito por <strong style="color: orange; background-color: grey;">Fernando Labarca</strong></i></p>
+    </footer>
     <script src="./src/js/countdown.js" defer></script>
-
-
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
