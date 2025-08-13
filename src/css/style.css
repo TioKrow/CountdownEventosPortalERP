@@ -1,42 +1,36 @@
-/* general styling */
-body.container {
-    align-items: center;
-    background-color: #ffd54f;
-    display: flex;
-    font-family: -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Oxygen-Sans,
-        Ubuntu,
-        Cantarell,
-        "Helvetica Neue",
-        sans-serif;
-}
-
-.container {
+.container,
+.container2,
+.container3 {
     color: #333;
     margin: 0 auto;
     text-align: center;
+    max-width: 700px;
 }
 
-h1 {
-    font-weight: normal;
-    letter-spacing: .125rem;
-    text-transform: uppercase;
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0;
+    margin: 0 auto;
+    width: fit-content;
 }
 
 li {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-size: 1.5em;
     list-style-type: none;
     padding: 1em;
     text-transform: uppercase;
+    margin: 0 4px;
 }
 
 li span {
     display: block;
-    font-size: 4.5rem;
+    font-size: 4rem;
 }
 
 .emoji {
@@ -49,29 +43,145 @@ li span {
     padding: 0 .5rem;
 }
 
-.container2 {
-    color: #333;
-    margin: 0 auto;
-    text-align: center;
+#btn {
+    font-size: 1rem;
+    padding: 8px 18px;
+    height: 38px;
+    margin: 2px;
 }
 
-.container3 {
-    color: #333;
-    margin: 0 auto;
+h1,
+#headline,
+#headline2,
+#headline3 {
+    font-size: 2rem;
+    padding: 10px 0;
     text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
+/* Tablets y pantallas medianas */
+@media (max-width: 1024px) {
 
-@media all and (max-width: 768px) {
-    h1 {
-        font-size: calc(1.5rem * var(--smaller));
+    .container,
+    .container2,
+    .container3 {
+        max-width: 95vw;
+        padding: 0 10px;
     }
 
     li {
-        font-size: calc(1.125rem * var(--smaller));
+        font-size: 1.1em;
+        padding: 0.7em;
     }
 
     li span {
-        font-size: calc(3.375rem * var(--smaller));
+        font-size: 2.5rem;
     }
+
+    #btn {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+        height: 32px;
+    }
+
+    h1,
+    #headline,
+    #headline2,
+    #headline3 {
+        font-size: 1.3rem;
+        padding: 6px 0;
+    }
+}
+
+/* Celulares grandes y tablets pequeños */
+@media (max-width: 768px) {
+    ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    li {
+        font-size: 0.9em;
+        padding: 0.5em;
+        margin: 0 2px;
+    }
+
+    li span {
+        font-size: 1.5rem;
+    }
+
+    #btn {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+        height: 28px;
+    }
+
+    h1,
+    #headline,
+    #headline2,
+    #headline3 {
+        font-size: 1.1rem;
+        padding: 4px 0;
+    }
+}
+
+/* Celulares pequeños */
+@media (max-width: 400px) {
+
+    .container,
+    .container2,
+    .container3 {
+        padding: 0 2px;
+    }
+
+    ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    li {
+        font-size: 0.7em;
+        padding: 0.3em;
+        margin: 0 1px;
+    }
+
+    li span {
+        font-size: 1rem;
+    }
+
+    #btn {
+        font-size: 0.7rem;
+        padding: 2px 6px;
+        height: 22px;
+    }
+
+    h1,
+    #headline,
+    #headline2,
+    #headline3 {
+        font-size: 0.9rem;
+        padding: 2px 0;
+    }
+}
+
+/* Aplica uppercase a todos los textos */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+#headline,
+#headline2,
+#headline3,
+li,
+li span,
+a,
+footer,
+button,
+#btn {
+    text-transform: uppercase;
 }
