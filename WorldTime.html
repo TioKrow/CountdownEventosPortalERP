@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloj Mundial UTC - MHC</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./src/css/WorldTime.css">
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // Componente principal del reloj mundial
+        const WorldClock = () => {
+            // Estado para guardar la fecha y hora actual, se actualizará cada segundo
+            const [currentTime, setCurrentTime] = React.useState(new Date());
+
+            // useEffect se usa para ejecutar código con efectos secundarios (como un temporizador)
+            React.useEffect(() => {
+                // Creamos un intervalo que actualiza la hora cada segundo
+                const timerId = setInterval(() => {
+                    setCurrentTime(new Date());
+                }, 1000);
+
+                // Función de limpieza: se ejecuta para evitar fugas de memoria.
+                return () => clearInterval(timerId);
+            }, []); // El array vacío [] significa que este efecto solo se ejecuta una vez
+
+            // Opciones para formatear la hora a HH:MM:SS
+            const timeOptions = {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false,
+            };
+
+            // Función para obtener la hora formateada para una zona horaria específica
+            const getFormattedTime = (zone) => {
+                return currentTime.toLocaleTimeString('es-ES', { ...timeOptions, timeZone: zone });
+            };
+
+            // JSX que se renderizará en la pantalla
+            return (
+                <div className="world-clock-container">
+                    {/* Primera Fila de Ciudades (ACTUALIZADA) */}
+                    <div className="clock-row">
+                        <div className="clock-box">
+                            <h3>México DF, México</h3>
+                            <p>{getFormattedTime('America/Mexico_City')}</p>
+                        </div>
+                        <div className="clock-box">
+                            <h3>São Paulo, Brasil</h3>
+                            <p>{getFormattedTime('America/Sao_Paulo')}</p>
+                        </div>
+                        <div className="clock-box">
+                            <h3>Santiago, Chile</h3>
+                            <p>{getFormattedTime('America/Santiago')}</p>
+                        </div>
+                    </div>
+
+                    {/* Reloj UTC Central */}
+                    <div className="utc-clock">
+                        <h2>HORA MUNDIAL COORDINADA</h2>
+                        <p className="utc-time-display">{getFormattedTime('Etc/UTC')}</p>
+                        <span>UTC</span>
+                    </div>
+
+                    {/* Tercera Fila de Ciudades */}
+                    <div className="clock-row">
+                        <div className="clock-box">
+                            <h3>Bogota, Colombia</h3>
+                            <p>{getFormattedTime('America/Bogota')}</p>
+                        </div>
+                        <div className="clock-box">
+                            <h3>Madrid, España</h3>
+                            <p>{getFormattedTime('Europe/Madrid')}</p>
+                        </div>
+                        <div className="clock-box">
+                            <h3>Lisbon, Portugal</h3>
+                            <p>{getFormattedTime('Europe/Lisbon')}</p>
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        // Renderizar el componente principal en el div #root
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+        root.render(<WorldClock />);
+
+    </script>
+
+
+</body>
+
+</html>
